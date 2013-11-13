@@ -1,4 +1,4 @@
 Codeigniter-Tank
 ================
 
-Codeigniter enhanced edition with my own library
+Codeigniter enhanced edition with my own libraries.
