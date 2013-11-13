@@ -28,8 +28,7 @@
  * By default development will show errors but testing and live will hide them.
  */
 
-if (defined('ENVIRONMENT'))
-{
+if (defined('ENVIRONMENT')) {
 	switch (ENVIRONMENT)
 	{
 		case 'development':
@@ -72,7 +71,7 @@ if (defined('ENVIRONMENT'))
  * NO TRAILING SLASH!
  *
  */
-	$application_folder = 'application';
+	$application_folder = 'app';
 
 /*
  * --------------------------------------------------------------------
@@ -135,13 +134,11 @@ if (defined('ENVIRONMENT'))
  */
 
 	// Set the current directory correctly for CLI requests
-	if (defined('STDIN'))
-	{
+	if (defined('STDIN')) {
 		chdir(dirname(__FILE__));
 	}
 
-	if (realpath($system_path) !== FALSE)
-	{
+	if (realpath($system_path) !== FALSE) {
 		$system_path = realpath($system_path).'/';
 	}
 
@@ -149,8 +146,7 @@ if (defined('ENVIRONMENT'))
 	$system_path = rtrim($system_path, '/').'/';
 
 	// Is the system path correct?
-	if ( ! is_dir($system_path))
-	{
+	if ( ! is_dir($system_path)) {
 		exit("Your system folder path does not appear to be set correctly. Please open the following file and correct this: ".pathinfo(__FILE__, PATHINFO_BASENAME));
 	}
 
@@ -177,15 +173,11 @@ if (defined('ENVIRONMENT'))
 
 
 	// The path to the "application" folder
-	if (is_dir($application_folder))
-	{
+	if (is_dir($application_folder))  {
 		define('APPPATH', $application_folder.'/');
-	}
-	else
-	{
-		if ( ! is_dir(BASEPATH.$application_folder.'/'))
-		{
-			exit("Your application folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
+	} else {
+		if ( ! is_dir(BASEPATH.$application_folder.'/')) {
+			exit("Your app folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
 		}
 
 		define('APPPATH', BASEPATH.$application_folder.'/');
