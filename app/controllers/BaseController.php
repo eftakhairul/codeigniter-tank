@@ -33,44 +33,71 @@ abstract class BaseController extends CI_Controller
 		parse_str($_SERVER['QUERY_STRING'], $_GET);
 	}
 
-	protected function populateFlashData()
+    /**
+     * This is required for activate flash data in project
+     * If you need flash data, Just remove from constactor
+     */
+    protected function populateFlashData()
 	{
-		$notify['message'] = $this->session->flashdata('message');
-		$notify['messageType'] = $this->session->flashdata('messageType');
+		$notify['message']      = $this->session->flashdata('message');
+		$notify['messageType']  = $this->session->flashdata('messageType');
 
 		$this->data['notification'] = $notify;
 	}
 
-        protected function redirectForSuccess($redirectLink, $message)
-        {
-            $this->session->set_flashdata('message', $message);
-            $this->session->set_flashdata('messageType', 'success');
-            redirect($redirectLink);
+    /**
+     * Redirect to provided URL with message while one event success
+     *
+     * @param $redirectLink
+     * @param $message
+     */
+    protected function redirectForSuccess($redirectLink, $message)
+    {
+        $this->session->set_flashdata('message', $message);
+        $this->session->set_flashdata('messageType', 'success');
+        redirect($redirectLink);
+    }
+
+    /**
+     * Redirect to provided URL with message while one event fails
+     *
+     * @param $redirectLink
+     * @param $message
+     */
+    protected function redirectForFailure($redirectLink, $message)
+    {
+        $this->session->set_flashdata('message', $message);
+        $this->session->set_flashdata('messageType', 'errormsg');
+        redirect($redirectLink);
+    }
+
+    /**
+     * Check username that does it exists in DB or not
+     *
+     * @param $username
+     * @return bool
+     */
+    public function username_check($username)
+    {
+        $this->load->model('users');
+        if(!$this->users->checkUsernameExisted($username)){
+             return true;
+         } else {
+             return false;
+         }
+    }
+
+    /**
+     * Validate login or redirect to login page
+     *
+     * @return mixed
+     */
+    protected function prepareLogin()
+    {
+        if (!$this->session->userdata('userId')) {
+            redirect('auth/fbLogin');
         }
 
-        protected function redirectForFailure($redirectLink, $message)
-        {
-            $this->session->set_flashdata('message', $message);
-            $this->session->set_flashdata('messageType', 'errormsg');
-            redirect($redirectLink);
-        }
-
-        public function username_check($username)
-        {
-            $this->load->model('users');
-            if(!$this->users->checkUsernameExisted($username)){
-                 return true;
-             } else {
-                 return false;
-             }
-        }
-
-        protected function prepareLogin()
-        {
-            if (!$this->session->userdata('userId')) {
-                redirect('auth/fbLogin');
-            }
-
-            return $this->session->userdata('userId');
-        }
+        return $this->session->userdata('userId');
+    }
 }
