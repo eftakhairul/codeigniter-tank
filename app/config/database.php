@@ -52,8 +52,8 @@ $active_record = true;
 
 $db['default']['hostname'] = "localhost";
 $db['default']['username'] = "root"; // Database User Nam
-$db['default']['password'] = ""; // Database User Password
-$db['default']['database'] = ""; // Database Name
+$db['default']['password'] = "commonrbs"; // Database User Password
+$db['default']['database'] = "carsreun_carsreunited"; // Database Name
 $db['default']['dbdriver'] = "mysql";
 $db['default']['dbprefix'] = "";
 $db['default']['pconnect'] = TRUE;
@@ -63,10 +63,10 @@ $db['default']['cachedir'] = "";
 $db['default']['char_set'] = "utf8";
 $db['default']['dbcollat'] = "utf8_unicode_ci";
 
-$db['staging']['hostname'] = "";
-$db['staging']['username'] = ""; // Staging Database User Name
-$db['staging']['password'] = ""; // Staging Database User Password
-$db['staging']['database'] = "";   // Staging Database Name
+$db['staging']['hostname'] = "localhost";
+$db['staging']['username'] = "shopofth_cars"; // Staging Database User Name
+$db['staging']['password'] = "c@rsreunited"; // Staging Database User Password
+$db['staging']['database'] = "shopofth_content";   // Staging Database Name
 $db['staging']['dbdriver'] = "mysql";
 $db['staging']['dbprefix'] = "";
 $db['staging']['pconnect'] = TRUE;
