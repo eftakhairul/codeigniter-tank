@@ -191,7 +191,6 @@ if (defined('ENVIRONMENT')) {
  * And away we go...
  *
  */
-require_once (APPPATH . 'config/server.php');
 require_once APPPATH . 'controllers/BaseController.php';
 require_once BASEPATH. 'core/CodeIgniter.php';
 
