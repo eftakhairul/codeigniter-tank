@@ -45,7 +45,10 @@
 | the active record class
 */
 
-$active_group = 'default';
+// Include server list
+include_once (APPPATH . '/config/servers.php');
+
+$active_group = getCurrentServer();
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
