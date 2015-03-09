@@ -2,12 +2,9 @@
 
 global $config;
 
-$config['server_local']         = array('http://www.grocery-crud.local'); //local server host name
+$config['server_local']         = array(''); //local server host name
 $config['server_staging']       = array(''); // staging server host name
-$config['server_production']    = array('www.findmydentist.com/blog-poster',
-                                        "www.findmydentist.com",
-                                        "https://www.findmydentist.com",
-                                        "findmydentist.com"); // production server host name
+$config['server_production']    = array(''); // production server host name
 
 function getCurrentServer() {
 
