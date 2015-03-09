@@ -14,7 +14,7 @@ include_once APPPATH . "libraries/DateHelper.php";
 include_once APPPATH . "libraries/DbHelper.php";
 include_once APPPATH . "libraries/RefactorHelper.php";
 
-abstract class BaseController extends Controller
+abstract class BaseController extends CI_Controller
 {
     protected $data = array();
 

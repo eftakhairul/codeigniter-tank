@@ -13,7 +13,7 @@ class MY_URI extends CI_URI
 
     public function MY_URI()
     {
-        parent::CI_URI();
+         parent::__construct();
     }
 
     public function getSegmentIndex($segmentValue)

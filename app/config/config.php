@@ -14,6 +14,8 @@
 | path to your installation.
 |
 */
+// Include server list
+include_once (APPPATH . '/config/servers.php');
 $baseUrl['default']     = 'http://' . $_SERVER['HTTP_HOST'];
 $baseUrl['staging']     = 'http://' . $_SERVER['HTTP_HOST'];
 $baseUrl['production']  = 'http://' . $_SERVER['HTTP_HOST'].'/blog-poster';
@@ -31,7 +33,7 @@ $config['base_url']	= $baseUrl[$active_group];
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
