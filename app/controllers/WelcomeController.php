@@ -19,8 +19,7 @@ class WelcomeController extends BaseController {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
-		die("imere");
+	{		
 		$this->load->view('welcome_message');
 	}
 }
