@@ -1,5 +1,10 @@
 <?php  if (!defined('BASEPATH')) exit('No direct script access allowed');
 
+**/
+* Model Class with extensive support functions
+*
+* @author: Eftakhairul Islam <eftakhairul@gmail.com>
+*/
 class MY_Model extends CI_Model
 {
     protected $table;

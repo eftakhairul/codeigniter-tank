@@ -4,28 +4,9 @@ class MY_Form_validation extends CI_Form_validation
 {
     public function  __construct ()
     {
-        parent::CI_Form_validation();
+        parent::__construct();
         $this->set_error_delimiters('','');
     }
-
-    public function setRulesForBlogPost()
-    {
-        $config = array(
-            array(
-                'field' => 'title',
-                'label' => 'the title',
-                'rules' => 'required'
-            ),
-            array(
-                'field' => 'description',
-                'label' => 'the description',
-                'rules' => 'required'
-            ),
-        );
-
-        $this->set_rules($config);
-    }
-
     
     public function setRulesForSignIn()
     {
