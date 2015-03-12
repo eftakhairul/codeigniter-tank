@@ -2,21 +2,26 @@
 
 class Layout
 {
-    var $registry;
-    var $layout;
+    protected $registry;
+    protected $layout;
 
-    function Layout($layout = "layouts/main")
+    public function Layout($layout = "layouts/main")
     {
         $this->obj =& get_instance();
         $this->layout = $layout;
     }
 
-    function setLayout($layout)
+    public function setLayout($layout)
     {
       $this->layout = $layout;
     }
 
-    function view($view, $data=null, $return=false)
+    public function getLayout()
+    {
+      return $this->layout;
+    }
+
+    public function view($view, $data=null, $return=false)
     {
         $data['content_for_layout'] = $this->obj->load->view($view,$data,true);
 

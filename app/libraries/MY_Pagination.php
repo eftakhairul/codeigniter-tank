@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class MY_Pagination extends CI_Pagination
 {
@@ -6,7 +6,7 @@ class MY_Pagination extends CI_Pagination
 
     public function MY_Pagination()
     {
-        parent::CI_Pagination();
+        parent::__construct();
         $CI = get_instance();
         
         $this->values['per_page'] = $CI->config->item('rowsPerPage');

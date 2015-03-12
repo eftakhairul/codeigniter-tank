@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
  * Description of Export AS Excel
@@ -7,7 +7,7 @@
  * @author      Eftakhairul Islma <eftakhairul@gmail.com>
  * @website     http://eftakhairul.com
  */
-class Exportexcel
+class ExportExcel
 {
     function xlsBOF()
     {
