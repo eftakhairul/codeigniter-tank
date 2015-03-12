@@ -1,26 +1,28 @@
 <?php  if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-**/
-* Model Class with extensive support functions
-*
-* @author: Eftakhairul Islam <eftakhairul@gmail.com>
-*/
+/**
+ * Class MY_Model
+ *
+ * Helping Model class with extensive methods
+ *
+ * @author Eftakhairul Islam <eftakhairul@gmail.com>
+ */
 class MY_Model extends CI_Model
 {
     protected $table;
     protected $primaryKey = 'id';
 
-    private $fields = array();
-    private $numRows = null;
-    private $insertId = null;
-    private $affectedRows = null;
-    private $returnArray = true;
+    private $fields         = array();
+    private $numRows        = null;
+    private $insertId       = null;
+    private $affectedRows   = null;
+    private $returnArray    = true;
     
     public function loadTable($table, $primaryKey = 'id')
     {
-        $this->table = $table;
-        $this->fields = $this->db->list_fields($table);
-        $this->primaryKey = $primaryKey;
+        $this->table        = $table;
+        $this->fields       = $this->db->list_fields($table);
+        $this->primaryKey   = $primaryKey;
     }
 
     public function findAll($conditions = null, $fields = '*', $order = null, $start = 0, $limit = null)

@@ -6,6 +6,7 @@
  * Extended the core CI_Router class in order to force a different naming
  * convention for controllers.
  *
+ * @author Eftakhairul Islam <eftakhairul@gmail.com>
  */
 class MY_Router extends CI_Router
 {

@@ -5,7 +5,7 @@
  *
  * Extended the core CI_URI class in order to add two extra methods
  * 
- * Eftakhairul Islam <eftakhairul@gmail.com> 
+ * @author Eftakhairul Islam <eftakhairul@gmail.com>
  */
 class MY_URI extends CI_URI
 {
